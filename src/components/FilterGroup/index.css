@@ -1,0 +1,59 @@
+.filterCont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid green;
+}
+.filter-heading {
+  font-size: 12px;
+  font-weight: bold;
+  color: #f8fafc;
+  font-family: 'Roboto';
+  margin: 3px;
+}
+.eachType {
+  display: flex;
+}
+.allListsCon {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.lable {
+  font-size: 10px;
+  font-weight: bold;
+  color: #f8fafc;
+  font-family: 'Roboto';
+  margin: 3px;
+}
+.lineis1 {
+  background-color: #475569;
+  width: 100%;
+}
+.lineis2 {
+  background-color: #475569;
+  width: 100%;
+}
+.optionsCon {
+  display: flex;
+  flex-direction: column;
+  border: 1px red solid;
+}
+.rangesAliCon {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+}
+@media screen and (max-width: 576px) {
+  .optionsCon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .lineis2 {
+    display: flex;
+    width: 0;
+  }
+}
