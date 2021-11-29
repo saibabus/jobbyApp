@@ -1,6 +1,13 @@
 import './index.css'
 
 const FilterGroup = props => {
+  const {salaryrangevalueis, employemtfilter} = props
+  const ischecked = true
+
+  const changecheckboxstatus = event => {
+    employemtfilter(event.target.value)
+  }
+
   const renderallEmployTypes = () => {
     const {employmentTypesList} = props
     return employmentTypesList.map(each => (
@@ -8,14 +15,19 @@ const FilterGroup = props => {
         <input
           type="checkbox"
           id={each.employmentTypeId}
-          value={each.label}
-          name={each.employmentTypeId}
+          value={each.employmentTypeId}
+          name={each.label}
+          onChecked={ischecked}
+          onChange={changecheckboxstatus}
         />
         <label className="lable" htmlFor={each.employmentTypeId}>
           {each.label}
         </label>
       </li>
     ))
+  }
+  const changeradioValue = event => {
+    salaryrangevalueis(event.target.value)
   }
 
   const renderallSalaryRanges = () => {
@@ -27,6 +39,7 @@ const FilterGroup = props => {
           id={each.salaryRangeId}
           value={each.salaryRangeId}
           name="range"
+          onChange={changeradioValue}
         />
         <label className="lable" htmlFor={each.salaryRangeId}>
           {each.label}
