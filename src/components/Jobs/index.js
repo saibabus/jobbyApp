@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
+import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {BsSearch} from 'react-icons/bs'
 
@@ -117,9 +118,11 @@ class Jobs extends Component {
       <p className="failureDis">
         We can seem to find the page your looking for.
       </p>
-      <button type="button" className="retrybtn">
-        Retry
-      </button>
+      <Link to="/jobs">
+        <button type="button" className="retrybtn">
+          Retry
+        </button>
+      </Link>
     </div>
   )
 

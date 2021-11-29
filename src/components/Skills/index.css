@@ -1,0 +1,31 @@
+.eachsillCon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid red;
+  width: 100px;
+}
+.skillLogo {
+  width: 30px;
+  margin-right: 3px;
+}
+.skillDiscr {
+  font-size: 10px;
+  font-weight: bold;
+  color: #f8fafc;
+  font-family: 'Roboto';
+  margin: 3px;
+}
+@media screen and (min-width: 768px) {
+  .eachsillCon {
+    width: 200px;
+  }
+  .skillLogo {
+    width: 80px;
+  }
+  .skillDiscr {
+    font-size: 20px;
+  }
+}
