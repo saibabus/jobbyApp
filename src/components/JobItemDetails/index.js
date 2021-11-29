@@ -1,6 +1,5 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
-import {Link} from 'react-router-dom'
 import {BsFillStarFill, BsFillBriefcaseFill} from 'react-icons/bs'
 import {MdLocationOn} from 'react-icons/md'
 import {GoLinkExternal} from 'react-icons/go'
@@ -99,11 +98,11 @@ class JobItemDetails extends Component {
     } = this.state
     return (
       <>
-        <div className="jobdetailsCon">
+        <div className="jobdetailsCon" testid="loader">
           <div className="logo-details-Con">
             <img
               className="companyLogo"
-              alt="company logo"
+              alt="job details company logo"
               src={jobDetailseach.companyurlLogo}
             />
             <div className="details-con">
@@ -130,9 +129,10 @@ class JobItemDetails extends Component {
             </div>
           </div>
           <div className="link-headind-con">
-            <h1 className="discription-head">Discription</h1>
+            <h1 className="discription-head">Description</h1>
 
-            <a href={jobDetailseach.companyWebsiteUrl}>
+            <a href={jobDetailseach.companyWebsiteUrl} className="visitLink">
+              Visit
               <GoLinkExternal className="extralink" />
             </a>
           </div>
@@ -144,7 +144,7 @@ class JobItemDetails extends Component {
               <Skills skills={each} key={each.name} />
             ))}
           </ul>
-          <h1 className="life-head">Life at Comapany</h1>
+          <h1 className="life-head">Life at Company</h1>
           <div className="life_container">
             <p className="life-disc">{lifeAtCompanyData.description}</p>
             <img
@@ -154,6 +154,7 @@ class JobItemDetails extends Component {
             />
           </div>
         </div>
+        <h1 className="life-head">Similar Jobs</h1>
         <ul className="similarJobCon">
           {similarJobsData.map(each => (
             <SimilarJobs key={each.id} similarJobsData={each} />
@@ -163,6 +164,10 @@ class JobItemDetails extends Component {
     )
   }
 
+  retryAgain = () => {
+    this.getDetailsofJob()
+  }
+
   renderFailureView = () => (
     <div className="failureCon">
       <img
@@ -170,15 +175,14 @@ class JobItemDetails extends Component {
         alt="failure view"
         className="failureImg"
       />
-      <h1 className="failure-head">Opps! Something Went Wrong</h1>
+      <h1 className="failure-head">Oops! Something Went Wrong</h1>
       <p className="failureDis">
-        We can seem to find the page your looking for.
+        We cannot seem to find the page you are looking for
       </p>
-      <Link to="/jobs">
-        <button type="button" className="retrybtn">
-          Retry
-        </button>
-      </Link>
+
+      <button type="button" className="retrybtn" onClick={this.retryAgain}>
+        Retry
+      </button>
     </div>
   )
 
@@ -206,7 +210,9 @@ class JobItemDetails extends Component {
     return (
       <div className="detailsCon">
         <Header />
-        <div className="detailshowCon">{this.renderAllViews()}</div>
+        <div className="detailshowCon" testid="loader">
+          {this.renderAllViews()}
+        </div>
       </div>
     )
   }

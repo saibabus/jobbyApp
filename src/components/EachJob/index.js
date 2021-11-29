@@ -47,7 +47,7 @@ const EachJob = props => {
             <p className="salary">{packageperAnnum}</p>
           </div>
         </div>
-        <h1 className="discription-head">Discription</h1>
+        <h1 className="discription-head">Description</h1>
         <p className="discription">{jobDiscription}</p>
       </li>
     </Link>

@@ -1,6 +1,5 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
-import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {BsSearch} from 'react-icons/bs'
 
@@ -116,7 +115,7 @@ class Jobs extends Component {
       />
       <h1 className="failure-head">No Jobs Found</h1>
       <p className="failureDis">
-        We could not find any jobs.Try other filters.
+        We could not find any jobs. Try other filters
       </p>
     </div>
   )
@@ -140,6 +139,10 @@ class Jobs extends Component {
     this.setState({salaryRangeValue: salaryRangeId}, this.getAllJobdetails)
   }
 
+  retryagin = () => {
+    this.getAllJobdetails()
+  }
+
   renderFailureView = () => (
     <div className="failureCon">
       <img
@@ -147,15 +150,14 @@ class Jobs extends Component {
         alt="failure view"
         className="failureImg"
       />
-      <h1 className="failure-head">Opps! Something Went Wrong</h1>
+      <h1 className="failure-head">Oops! Something Went Wrong</h1>
       <p className="failureDis">
-        We can seem to find the page your looking for.
+        We cannot seem to find the page you are looking for
       </p>
-      <Link to="/jobs">
-        <button type="button" className="retrybtn">
-          Retry
-        </button>
-      </Link>
+
+      <button type="button" className="retrybtn" onClick={this.retryagin}>
+        Retry
+      </button>
     </div>
   )
 

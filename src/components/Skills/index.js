@@ -5,11 +5,7 @@ const Skills = props => {
   const {name, imageUrl} = skills
   return (
     <li className="eachsillCon">
-      <img
-        src={imageUrl}
-        alt="job details company logo"
-        className="skillLogo"
-      />
+      <img src={imageUrl} alt={name} className="skillLogo" />
       <p className="skillDiscr">{name}</p>
     </li>
   )

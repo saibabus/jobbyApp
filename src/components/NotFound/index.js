@@ -1,7 +1,7 @@
 import Header from '../Header'
 import './index.css'
 
-const text = `We're sorry,the page you requested could not be found`
+const text = `we’re sorry, the page you requested could not be found`
 const NotFound = () => (
   <div className="naotfoundCont">
     <Header />

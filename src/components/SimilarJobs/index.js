@@ -15,7 +15,11 @@ const SimilarJobs = props => {
   return (
     <li className="similarjobConeach">
       <div className="logo-details-Con">
-        <img className="companyLogo" alt="company logo" src={companyurlLogo} />
+        <img
+          className="companyLogo"
+          alt="similar job company logo"
+          src={companyurlLogo}
+        />
         <div className="details-con">
           <h1 className="title">{title}</h1>
           <div className="ratingCon">
@@ -25,7 +29,7 @@ const SimilarJobs = props => {
         </div>
       </div>
 
-      <h1 className="discription-head">Discription</h1>
+      <h1 className="discription-head">Description</h1>
       <p className="discription">{jobDiscription}</p>
       <div className="addres-job-salary-con">
         <div className="locatCon">
