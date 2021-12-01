@@ -82,8 +82,9 @@ class Jobs extends Component {
     }
     const response = await fetch(url2, options)
     const data = await response.json()
-    console.log(response)
-    console.log(data)
+    // console.log(response)
+    // console.log(data)
+    console.log(employementType)
 
     if (response.ok) {
       const fetchedData = data.jobs.map(each => ({

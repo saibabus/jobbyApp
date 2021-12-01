@@ -44,9 +44,9 @@ class JobItemDetails extends Component {
       method: 'GET',
     }
     const response = await fetch(url, options)
-    console.log(response)
+    // console.log(response)
     const data = await response.json()
-    console.log(data)
+    //  console.log(data)
     if (response.ok) {
       const fetchedData = {
         companyurlLogo: data.job_details.company_logo_url,

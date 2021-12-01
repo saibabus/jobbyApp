@@ -1,11 +1,24 @@
 import './index.css'
 
+let listarray = []
+
 const FilterGroup = props => {
   const {salaryrangevalueis, employemtfilter} = props
-  const ischecked = true
 
   const changecheckboxstatus = event => {
-    employemtfilter(event.target.value)
+    const checkvalueis = event.target.value
+    const checkstatusis = event.target.checked
+    if (checkstatusis) {
+      listarray.push(checkvalueis)
+    } else {
+      const updatedvalues = listarray.filter(each => each !== checkvalueis)
+      listarray = updatedvalues
+    }
+    //  console.log(checkstatusis)
+    const stringis = listarray.join()
+    //   console.log(stringis)
+    //  console.log(listarray)
+    employemtfilter(stringis)
   }
 
   const renderallEmployTypes = () => {
@@ -17,7 +30,6 @@ const FilterGroup = props => {
           id={each.employmentTypeId}
           value={each.employmentTypeId}
           name={each.label}
-          onChecked={ischecked}
           onChange={changecheckboxstatus}
         />
         <label className="lable" htmlFor={each.employmentTypeId}>
